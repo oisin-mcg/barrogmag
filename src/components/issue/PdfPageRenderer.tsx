@@ -9,9 +9,10 @@ GlobalWorkerOptions.workerSrc = new URL(
 
 type PdfPageRendererProps = {
   pdfPath: string;
+  zoom?: number;
 };
 
-export default function PdfPageRenderer({ pdfPath }: PdfPageRendererProps) {
+export default function PdfPageRenderer({ pdfPath, zoom = 1 }: PdfPageRendererProps) {
   const [pages, setPages] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -81,5 +82,5 @@ export default function PdfPageRenderer({ pdfPath }: PdfPageRendererProps) {
     );
   }
 
-  return <IssueFlipbook pages={pages} />;
+  return <IssueFlipbook pages={pages} zoom={zoom} />;
 }

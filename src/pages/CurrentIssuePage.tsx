@@ -30,6 +30,7 @@ export default function CurrentIssuePage() {
   const showPrelaunchTeaser = isIssueHiddenUntilRelease(slug);
   const hasArchiveIssues = hasPublicArchiveIssues();
   const [isReadingMode, setIsReadingMode] = useState(false);
+  const [readerZoom, setReaderZoom] = useState(1);
 
   useEffect(() => {
     function closeReadingMode(event: KeyboardEvent) {
@@ -41,6 +42,12 @@ export default function CurrentIssuePage() {
     document.addEventListener("keydown", closeReadingMode);
     return () => document.removeEventListener("keydown", closeReadingMode);
   }, []);
+
+  useEffect(() => {
+    if (!isReadingMode) {
+      setReaderZoom(1);
+    }
+  }, [isReadingMode]);
 
   if (showPrelaunchTeaser || !issue) {
     return (
@@ -91,6 +98,13 @@ export default function CurrentIssuePage() {
           <p className="muted">
             Release date: {new Date(issue.releaseDate).toLocaleDateString()}
           </p>
+          <a
+            className="button-link primary"
+            href={issue.pdfPath}
+            download
+          >
+            Download PDF
+          </a>
           {hasArchiveIssues ? (
             <Link to="/archive" className="button-link secondary">
               Browse Archive
@@ -100,15 +114,41 @@ export default function CurrentIssuePage() {
         <div className="issue-reader card" aria-label={`${issue.title} reader`}>
           <div className="reader-toolbar">
             <h2>Issue Reader</h2>
-            <button
-              className="button-link secondary reader-mode-button"
-              type="button"
-              onClick={() => setIsReadingMode((current) => !current)}
-            >
-              {isReadingMode ? "Exit Reading Mode" : "Reading Mode"}
-            </button>
+            <div className="reader-actions">
+              {isReadingMode ? (
+                <div className="zoom-controls" aria-label="Reader zoom controls">
+                  <button
+                    className="reader-icon-button"
+                    type="button"
+                    onClick={() => setReaderZoom((current) => Math.max(1, current - 0.15))}
+                    aria-label="Zoom out"
+                  >
+                    -
+                  </button>
+                  <span>{Math.round(readerZoom * 100)}%</span>
+                  <button
+                    className="reader-icon-button"
+                    type="button"
+                    onClick={() => setReaderZoom((current) => Math.min(1.6, current + 0.15))}
+                    aria-label="Zoom in"
+                  >
+                    +
+                  </button>
+                </div>
+              ) : null}
+              <a className="button-link secondary" href={issue.pdfPath} download>
+                Download PDF
+              </a>
+              <button
+                className="button-link secondary reader-mode-button"
+                type="button"
+                onClick={() => setIsReadingMode((current) => !current)}
+              >
+                {isReadingMode ? "Exit Reading Mode" : "Reading Mode"}
+              </button>
+            </div>
           </div>
-          <PdfPageRenderer pdfPath={issue.pdfPath} />
+          <PdfPageRenderer pdfPath={issue.pdfPath} zoom={isReadingMode ? readerZoom : 1} />
         </div>
       </div>
     </section>

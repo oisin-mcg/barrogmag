@@ -56,7 +56,7 @@ export function hasPublicCurrentIssue() {
 }
 
 export function hasPublicArchiveIssues() {
-  return getVisibleIssues().length > 0;
+  return getVisibleIssues().length > 1;
 }
 
 export function isIssueHiddenUntilRelease(slug?: string) {

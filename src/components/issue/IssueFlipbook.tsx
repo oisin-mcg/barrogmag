@@ -1,10 +1,12 @@
 import HTMLFlipBook from "react-pageflip";
+import type { CSSProperties } from "react";
 
 type IssueFlipbookProps = {
   pages: string[];
+  zoom?: number;
 };
 
-export default function IssueFlipbook({ pages }: IssueFlipbookProps) {
+export default function IssueFlipbook({ pages, zoom = 1 }: IssueFlipbookProps) {
   if (pages.length === 0) {
     return (
       <div className="card">
@@ -17,7 +19,10 @@ export default function IssueFlipbook({ pages }: IssueFlipbookProps) {
   }
 
   return (
-    <div className="flipbook-wrap">
+    <div
+      className="flipbook-wrap"
+      style={{ "--reader-zoom": zoom } as CSSProperties}
+    >
       <HTMLFlipBook
         width={380}
         height={540}

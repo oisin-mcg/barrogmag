@@ -140,6 +140,7 @@ img {
 .main-nav {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: var(--space-2);
   font-family: var(--font-heading);
 }
@@ -243,9 +244,36 @@ img {
   font-size: 1.25rem;
 }
 
+.reader-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
 .reader-mode-button {
   cursor: pointer;
   font-size: 0.95rem;
+}
+
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-heading);
+}
+
+.reader-icon-button {
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-1);
+  background: #fff;
+  color: var(--color-accent-jaguar);
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 .reading-mode-active .issue-meta {
@@ -275,6 +303,9 @@ img {
 .flipbook-wrap {
   display: flex;
   justify-content: center;
+  min-width: calc(100% * var(--reader-zoom, 1));
+  transform: scale(var(--reader-zoom, 1));
+  transform-origin: top center;
 }
 
 .flip-page {
@@ -492,8 +523,42 @@ img {
 }
 
 @media (max-width: 640px) {
+  .header-inner {
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
   .brand-full {
     width: 98px;
+  }
+
+  .main-nav {
+    justify-content: center;
+    gap: 0.35rem;
+  }
+
+  .main-nav a {
+    padding: 0.3rem 0.45rem;
+    font-size: 0.9rem;
+  }
+
+  .reader-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .reader-actions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .reader-actions .button-link {
+    padding: 0.6rem 0.85rem;
   }
 
   .footer-inner {
