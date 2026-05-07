@@ -1,7 +1,9 @@
 backend:
   name: github
-  repo: REPLACE_WITH_OWNER/REPLACE_WITH_REPO
+  repo: oisin-mcg/barrogmag
   branch: main
+  base_url: https://barrogmag.mcgillicuddyoisin.workers.dev
+  
 
 media_folder: public/uploads
 public_folder: /uploads
