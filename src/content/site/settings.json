@@ -1,7 +1,7 @@
 {
-  "nextReleaseTitle": "Next Issue",
-  "nextReleaseDate": "2026-06-01T18:00:00.000Z",
-  "nextReleaseIssue": "",
-  "upcomingMessage": "Update this countdown from the CMS when the next release date is confirmed.",
-  "releaseMessage": "The new issue is out now."
+  "nextReleaseTitle": "Vol I, Issue I: Venues & Spaces for Creatives",
+  "nextReleaseDate": "2026-05-07T19:00:00",
+  "nextReleaseIssue": "issue-01",
+  "upcomingMessage": "Our first issue is out today!",
+  "releaseMessage": "Our first issue is out now!"
 }
