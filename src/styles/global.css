@@ -294,6 +294,14 @@ img {
   margin-bottom: var(--space-4);
 }
 
+.prelaunch-issue {
+  max-width: 760px;
+}
+
+.prelaunch-issue .button-link {
+  width: fit-content;
+}
+
 .issue-card {
   display: grid;
   gap: var(--space-2);

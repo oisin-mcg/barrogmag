@@ -22,7 +22,7 @@ export const issues = (Object.values(issueModules) as Issue[]).sort(
     new Date(firstIssue.releaseDate).getTime()
 );
 
-function getScheduledReleaseIssue() {
+export function getScheduledReleaseIssue() {
   if (!siteSettings.nextReleaseIssue) {
     return undefined;
   }
@@ -32,12 +32,13 @@ function getScheduledReleaseIssue() {
 
 export function getCurrentIssue() {
   const scheduledIssue = getScheduledReleaseIssue();
+  const visibleIssues = getVisibleIssues();
 
   if (scheduledIssue && isNextReleaseLive()) {
     return scheduledIssue;
   }
 
-  return issues.find((issue) => issue.isCurrent) ?? issues[0];
+  return visibleIssues.find((issue) => issue.isCurrent) ?? visibleIssues[0];
 }
 
 export function getVisibleIssues() {
@@ -48,6 +49,24 @@ export function getVisibleIssues() {
   }
 
   return issues.filter((issue) => issue.slug !== scheduledIssue.slug);
+}
+
+export function hasPublicCurrentIssue() {
+  return Boolean(getCurrentIssue());
+}
+
+export function hasPublicArchiveIssues() {
+  return getVisibleIssues().length > 0;
+}
+
+export function isIssueHiddenUntilRelease(slug?: string) {
+  const scheduledIssue = getScheduledReleaseIssue();
+
+  if (!scheduledIssue || isNextReleaseLive()) {
+    return false;
+  }
+
+  return !slug || slug === scheduledIssue.slug;
 }
 
 export function getIssueBySlug(slug?: string) {

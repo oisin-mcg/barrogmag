@@ -1,14 +1,15 @@
 import { NavLink } from "react-router-dom";
-
-const navItems = [
-  { to: "/", label: "Home" },
-  { to: "/issue", label: "Current Issue" },
-  { to: "/blog", label: "Blog" },
-  { to: "/about", label: "About" },
-  { to: "/archive", label: "Archive" }
-];
+import { hasPublicArchiveIssues, hasPublicCurrentIssue } from "../../data/issues";
 
 export default function Header() {
+  const navItems = [
+    { to: "/", label: "Home", visible: true },
+    { to: "/issue", label: "Current Issue", visible: hasPublicCurrentIssue() },
+    { to: "/blog", label: "Blog", visible: true },
+    { to: "/about", label: "About", visible: true },
+    { to: "/archive", label: "Archive", visible: hasPublicArchiveIssues() }
+  ];
+
   return (
     <header className="site-header">
       <div className="container header-inner">
@@ -25,7 +26,7 @@ export default function Header() {
           />
         </NavLink>
         <nav aria-label="Main navigation" className="main-nav">
-          {navItems.map((item) => (
+          {navItems.filter((item) => item.visible).map((item) => (
             <NavLink
               key={item.to}
               to={item.to}

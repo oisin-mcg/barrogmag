@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { getCurrentIssue } from "../data/issues";
+import { getCurrentIssue, hasPublicArchiveIssues } from "../data/issues";
 import { getCountdownMessage, siteSettings } from "../data/siteSettings";
 
 function getTimeUntil(dateIso: string) {
@@ -16,6 +16,7 @@ function getTimeUntil(dateIso: string) {
 
 export default function HomePage() {
   const currentIssue = getCurrentIssue();
+  const hasArchiveIssues = hasPublicArchiveIssues();
   const countdown = getTimeUntil(siteSettings.nextReleaseDate);
   const countdownMessage = getCountdownMessage();
 
@@ -34,14 +35,20 @@ export default function HomePage() {
               A digital volunteer-run magazine that aims to highlight Irish
               culture and document the art that reflects it.
             </p>
-            <div className="cta-row">
-              <Link className="button-link primary" to={`/issue/${currentIssue.slug}`}>
-                Read Current Issue
-              </Link>
-              <Link className="button-link secondary" to="/archive">
-                View Archive
-              </Link>
-            </div>
+            {currentIssue || hasArchiveIssues ? (
+              <div className="cta-row">
+                {currentIssue ? (
+                  <Link className="button-link primary" to={`/issue/${currentIssue.slug}`}>
+                    Read Current Issue
+                  </Link>
+                ) : null}
+                {hasArchiveIssues ? (
+                  <Link className="button-link secondary" to="/archive">
+                    View Archive
+                  </Link>
+                ) : null}
+              </div>
+            ) : null}
           </article>
 
           <article className="card countdown-card">
