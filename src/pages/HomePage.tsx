@@ -31,8 +31,8 @@ export default function HomePage() {
             />
             <h1>Digital Magazine</h1>
             <p>
-              A home for features, essays, and visual stories from Barróg.
-              Replace this intro text with your final messaging.
+              A digital volunteer-run magazine that aims to highlight Irish
+              culture and document the art that reflects it.
             </p>
             <div className="cta-row">
               <Link className="button-link primary" to={`/issue/${currentIssue.slug}`}>
