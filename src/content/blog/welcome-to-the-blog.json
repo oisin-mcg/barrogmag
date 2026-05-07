@@ -1,0 +1,10 @@
+{
+  "slug": "welcome",
+  "title": "Welcome to the blog!",
+  "excerpt": "What's this for?",
+  "publishedAt": "2026-05-07T17:29:00",
+  "author": "barrog",
+  "body": [
+    "Here we will post announcements, updates and a whole lot more!"
+  ]
+}
