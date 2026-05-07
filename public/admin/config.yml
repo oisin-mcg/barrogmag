@@ -19,7 +19,17 @@ collections:
         fields:
           - { label: Next release title, name: nextReleaseTitle, widget: string }
           - { label: Next release date, name: nextReleaseDate, widget: datetime }
-          - { label: Countdown note, name: nextReleaseNote, widget: text }
+          - label: Issue to reveal when countdown reaches zero
+            name: nextReleaseIssue
+            widget: relation
+            collection: issues
+            search_fields: ["title", "slug"]
+            value_field: slug
+            display_fields: ["title"]
+            required: false
+            hint: "Upload the next issue first, leave Current issue off, then choose it here."
+          - { label: Upcoming message, name: upcomingMessage, widget: text }
+          - { label: Release message, name: releaseMessage, widget: text }
 
   - name: pages
     label: Pages

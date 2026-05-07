@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { issues } from "../data/issues";
+import { getVisibleIssues } from "../data/issues";
 
 export default function ArchivePage() {
+  const visibleIssues = getVisibleIssues();
+
   return (
     <section className="section">
       <div className="container">
@@ -10,7 +12,7 @@ export default function ArchivePage() {
           <p>Access the current and previous Barróg magazine editions.</p>
         </div>
         <div className="grid three">
-          {issues.map((issue) => (
+          {visibleIssues.map((issue) => (
             <article className="card issue-card" key={issue.id}>
               <img src={issue.coverImage} alt={`${issue.title} cover`} />
               <h2>{issue.title}</h2>

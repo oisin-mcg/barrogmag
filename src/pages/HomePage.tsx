@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { getCurrentIssue } from "../data/issues";
-import { siteSettings } from "../data/siteSettings";
+import { getCountdownMessage, siteSettings } from "../data/siteSettings";
 
 function getTimeUntil(dateIso: string) {
   const now = Date.now();
@@ -17,6 +17,7 @@ function getTimeUntil(dateIso: string) {
 export default function HomePage() {
   const currentIssue = getCurrentIssue();
   const countdown = getTimeUntil(siteSettings.nextReleaseDate);
+  const countdownMessage = getCountdownMessage();
 
   return (
     <section className="section">
@@ -60,7 +61,7 @@ export default function HomePage() {
                 <span>Minutes</span>
               </div>
             </div>
-            <p className="muted">{siteSettings.nextReleaseNote}</p>
+            <p className="muted">{countdownMessage}</p>
           </article>
         </div>
       </div>

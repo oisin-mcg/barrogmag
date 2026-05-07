@@ -58,3 +58,14 @@ Only people with GitHub write access to the repository should be able to publish
 The `Current issue` toggle controls what appears on the current issue page.
 
 The homepage countdown is separate. Edit it from `Site Settings > Countdown` in the CMS.
+
+To schedule a release ahead of time:
+
+1. Add the next issue in `Issues` with its cover and PDF.
+2. Leave `Current issue` off for that new issue.
+3. In `Site Settings > Countdown`, choose that issue in `Issue to reveal when countdown reaches zero`.
+4. Set the next release date, upcoming message, and release message.
+
+Before the countdown reaches zero, the scheduled issue is hidden from the public archive and current issue page.
+
+When the countdown reaches zero, the scheduled issue becomes the public current issue, the old current issue remains accessible in the archive, and the countdown message changes to the release message. The countdown numbers stay at zero until the countdown settings are updated for the next release.
