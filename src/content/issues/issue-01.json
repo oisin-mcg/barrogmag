@@ -1,10 +1,10 @@
 {
   "id": "issue-01",
   "slug": "issue-01",
-  "title": "First Issue (Test!)",
+  "title": "Vol I, Issue I: Venues & Spaces for Creatives",
   "description": "Provides insight into venues and spaces for creatives in Dublin.",
   "releaseDate": "2026-05-07T18:00:00.000Z",
-  "coverImage": "/uploads/green topo match.jpg",
-  "pdfPath": "/uploads/T38_TEST_PAGES.pdf",
-  "isCurrent": true
+  "coverImage": "/uploads/cover.png",
+  "pdfPath": "/uploads/Barróg Mag issue 1 COMPLETED.pdf",
+  "isCurrent": false
 }
