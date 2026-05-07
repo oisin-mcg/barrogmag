@@ -46,11 +46,14 @@ collections:
             field: { label: Paragraph, name: paragraph, widget: text }
           - { label: Note, name: note, widget: text, required: false }
           - { label: Contributors title, name: contributorsTitle, widget: string }
-          - label: Contributors body
-            name: contributorsBody
+          - label: Contributors
+            name: contributors
             widget: list
-            field: { label: Paragraph, name: paragraph, widget: text }
-          - { label: Contributors note, name: contributorsNote, widget: text, required: false }
+            summary: "{{fields.nameAndTitle}}"
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: Name and title, name: nameAndTitle, widget: string, hint: "Example: Oisin -- Web Designer" }
+              - { label: Body, name: body, widget: text }
 
   - name: issues
     label: Issues

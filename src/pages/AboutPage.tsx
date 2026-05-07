@@ -16,12 +16,17 @@ export default function AboutPage() {
 
         <article className="card">
           <h2>{aboutPageContent.contributorsTitle}</h2>
-          {aboutPageContent.contributorsBody.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-          {aboutPageContent.contributorsNote ? (
-            <p className="muted">{aboutPageContent.contributorsNote}</p>
-          ) : null}
+          <div className="contributors-list">
+            {aboutPageContent.contributors.map((contributor) => (
+              <section className="contributor-card" key={contributor.nameAndTitle}>
+                <img src={contributor.image} alt="" />
+                <div>
+                  <h3>{contributor.nameAndTitle}</h3>
+                  <p>{contributor.body}</p>
+                </div>
+              </section>
+            ))}
+          </div>
         </article>
       </div>
     </section>

@@ -5,8 +5,11 @@ export type AboutContent = {
   intro: string[];
   note?: string;
   contributorsTitle: string;
-  contributorsBody: string[];
-  contributorsNote?: string;
+  contributors: {
+    image: string;
+    nameAndTitle: string;
+    body: string;
+  }[];
 };
 
 export const aboutPageContent = aboutContent as AboutContent;
