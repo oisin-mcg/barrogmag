@@ -1,15 +1,40 @@
 {
   "title": "About Barrog",
   "intro": [
-    "Add your magazine story, editorial mission, and publication focus in this section."
+    "Barróg Magazine is a digital volunteer-run magazine that aims to highlight Irish culture and document the art that reflects it. \n\nBarróg aims to identify and bring light to the issues that young artists are facing across the country today, while also uplifting the people and groups that are making art amidst these challenging circumstances. \n\nBarróg recognises the importance of community for a thriving creative scene, and in producing this magazine we hope to cultivate a place for artists to discuss their creative processes and connect with other creatives."
   ],
-  "note": "Suggested topics: origin, vision, audience, and publishing rhythm.",
+  "note": "- The barróg team",
   "contributorsTitle": "Authors and Contributors",
   "contributors": [
     {
-      "image": "/assets/branding/logo-icon.png",
-      "nameAndTitle": "Ella -- Editor",
-      "body": "Add contributor bios, photography credits, and links to social pages or portfolios."
+      "image": "/uploads/Mychaela Headshot.png",
+      "nameAndTitle": "Mychaela Shevlin - Co-Founder & Project Manager",
+      "body": "Mychaela Shevlin is one of the co-founders of Barróg Magazine. She has an academic background in Leadership and Community Action at NUIG, Advanced Music and Sound Production at DFEi, Digital Marketing at TUD and Media Production Management at DCU. Mychaela now works to create community and strong communication lines for artists. She is a Music and Art journalist for Barróg, and a performer and artist manager in the Dublin music scene."
+    },
+    {
+      "image": "/uploads/Ella Headshot.png",
+      "nameAndTitle": "Ella O’Neill - Co-Founder & Chief Editor",
+      "body": "Ella O'Neill is a writer from Dublin, and one of Barróg's co-founders. She studied English Literature at Trinity College, Dublin and has written previously for the college's University Times and TN2 Magazine. Ella's writing often explores the impacts of changing technologies on and within writing and society."
+    },
+    {
+      "image": "/uploads/Oisín Headshot.png",
+      "nameAndTitle": "Oisín McGillicuddy - Head Web Designer",
+      "body": "Having studied Computing at NCI and now working in the industry at Advancis Global. Oisín is a professional guitarist, performing in venues such as The Workman's Club, Lost Lane, Phoenix Venue and more."
+    },
+    {
+      "image": "/uploads/Dylan Headshot.jpeg",
+      "nameAndTitle": "Dylan Dowling",
+      "body": "Dylan is a Music Journalist, Sound Engineer, Musician, and Content Creator from Dublin,Ireland. A music enthusiast for most of his life, Dylan runs the page “DecentMusicToListenTo” on Tiktok, Instagram, and Youtube. He is very passionate about the grassroots music scene, and strives to find the best music you haven't heard yet!"
+    },
+    {
+      "image": "/uploads/Jonathan Headshot.jpeg",
+      "nameAndTitle": "Jonathan Quigley",
+      "body": "Jonathan Quigley is a writer, director, theatre practitioner, and voice coach from\nClondalkin, Dublin. He trained in theatre for four years with ICFE and Griffith College\nand has directed and produced multiple theatrical productions across Dublin.\nRecently, he completed degrees in Journalism and Media Production Management\nand has been writing freelance ever since. His writing explores all things theatre and\nfilm, often with a specific focus on the happenings within the Irish industry."
+    },
+    {
+      "image": "/uploads/Conor Headshot.png",
+      "nameAndTitle": "Conor Prizeman",
+      "body": "Conor Prizeman is a writer, videographer and photographer from Dublin. With an academic background in media production management from DCU, Conor has had work featured with RTE, Sunday World, Evoke & Rathfarnham Castle Museum and more. Conor is passionate about various media production pursuits and plies his trade through freelance commercial content creation."
     }
   ]
 }
