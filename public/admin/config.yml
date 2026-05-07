@@ -9,6 +9,39 @@ media_folder: public/uploads
 public_folder: /uploads
 
 collections:
+  - name: site
+    label: Site Settings
+    files:
+      - name: settings
+        label: Countdown
+        file: src/content/site/settings.json
+        format: json
+        fields:
+          - { label: Next release title, name: nextReleaseTitle, widget: string }
+          - { label: Next release date, name: nextReleaseDate, widget: datetime }
+          - { label: Countdown note, name: nextReleaseNote, widget: text }
+
+  - name: pages
+    label: Pages
+    files:
+      - name: about
+        label: About Page
+        file: src/content/pages/about.json
+        format: json
+        fields:
+          - { label: Title, name: title, widget: string }
+          - label: Intro
+            name: intro
+            widget: list
+            field: { label: Paragraph, name: paragraph, widget: text }
+          - { label: Note, name: note, widget: text, required: false }
+          - { label: Contributors title, name: contributorsTitle, widget: string }
+          - label: Contributors body
+            name: contributorsBody
+            widget: list
+            field: { label: Paragraph, name: paragraph, widget: text }
+          - { label: Contributors note, name: contributorsNote, widget: text, required: false }
+
   - name: issues
     label: Issues
     label_singular: Issue
@@ -24,7 +57,7 @@ collections:
       - { label: Slug, name: slug, widget: string, hint: "Example: issue-02" }
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: text }
-      - { label: Release date, name: releaseDate, widget: datetime }
+      - { label: Issue publication date, name: releaseDate, widget: datetime }
       - { label: Cover image, name: coverImage, widget: image }
       - { label: PDF file, name: pdfPath, widget: file, media_library: { config: { multiple: false } } }
       - { label: Current issue, name: isCurrent, widget: boolean, required: false, default: false }

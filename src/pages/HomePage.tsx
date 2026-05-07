@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { getCurrentIssue } from "../data/issues";
+import { siteSettings } from "../data/siteSettings";
 
 function getTimeUntil(dateIso: string) {
   const now = Date.now();
@@ -15,7 +16,7 @@ function getTimeUntil(dateIso: string) {
 
 export default function HomePage() {
   const currentIssue = getCurrentIssue();
-  const countdown = getTimeUntil(currentIssue.releaseDate);
+  const countdown = getTimeUntil(siteSettings.nextReleaseDate);
 
   return (
     <section className="section">
@@ -44,7 +45,7 @@ export default function HomePage() {
 
           <article className="card countdown-card">
             <h2>Countdown to Next Issue</h2>
-            <p className="countdown-label">{currentIssue.title} release</p>
+            <p className="countdown-label">{siteSettings.nextReleaseTitle}</p>
             <div className="countdown-grid">
               <div>
                 <strong>{countdown.days}</strong>
@@ -59,9 +60,7 @@ export default function HomePage() {
                 <span>Minutes</span>
               </div>
             </div>
-            <p className="muted">
-              Change the release date in issue data to keep this countdown accurate.
-            </p>
+            <p className="muted">{siteSettings.nextReleaseNote}</p>
           </article>
         </div>
       </div>

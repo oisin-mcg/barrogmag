@@ -23,9 +23,9 @@ export default function IssueFlipbook({ pages }: IssueFlipbookProps) {
         height={540}
         size="stretch"
         minWidth={240}
-        maxWidth={700}
+        maxWidth={1100}
         minHeight={320}
-        maxHeight={1000}
+        maxHeight={1400}
         maxShadowOpacity={0.35}
         showCover
         mobileScrollSupport

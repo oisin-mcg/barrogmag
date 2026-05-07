@@ -5,6 +5,8 @@ The site includes a simple Git-backed CMS at `/admin`. It edits JSON content fil
 ## What The Team Can Edit
 
 - Issues: title, description, release date/countdown, cover image, PDF file, archive/current issue status.
+- Site settings: next release countdown title, date, and note.
+- Pages: About page copy.
 - Authors: name, role, profile photo, and bio.
 - Blog posts: title, excerpt, date, author, and body paragraphs.
 
@@ -50,3 +52,9 @@ For a smoother multi-person login, deploy the Sveltia CMS Authenticator as a Clo
 When someone saves content in the CMS, the CMS commits changes to GitHub. Cloudflare Pages sees the commit, rebuilds the site, and publishes the update.
 
 Only people with GitHub write access to the repository should be able to publish.
+
+## Current Issue And Countdown
+
+The `Current issue` toggle controls what appears on the current issue page.
+
+The homepage countdown is separate. Edit it from `Site Settings > Countdown` in the CMS.
