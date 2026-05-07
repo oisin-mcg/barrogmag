@@ -1,0 +1,72 @@
+backend:
+  name: github
+  repo: REPLACE_WITH_OWNER/REPLACE_WITH_REPO
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: issues
+    label: Issues
+    label_singular: Issue
+    folder: src/content/issues
+    extension: json
+    format: json
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}}"
+    fields:
+      - { label: ID, name: id, widget: string, hint: "Example: issue-02" }
+      - { label: Slug, name: slug, widget: string, hint: "Example: issue-02" }
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: text }
+      - { label: Release date, name: releaseDate, widget: datetime }
+      - { label: Cover image, name: coverImage, widget: image }
+      - { label: PDF file, name: pdfPath, widget: file, media_library: { config: { multiple: false } } }
+      - { label: Current issue, name: isCurrent, widget: boolean, required: false, default: false }
+
+  - name: authors
+    label: Editors and Authors
+    label_singular: Author
+    folder: src/content/authors
+    extension: json
+    format: json
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    summary: "{{name}}"
+    fields:
+      - { label: Slug, name: slug, widget: string, hint: "Lowercase, no spaces. Example: ella" }
+      - { label: Name, name: name, widget: string }
+      - { label: Role, name: role, widget: string }
+      - { label: Profile photo, name: photo, widget: image }
+      - { label: Bio, name: bio, widget: text, required: false }
+
+  - name: blog
+    label: Blog Posts
+    label_singular: Blog Post
+    folder: src/content/blog
+    extension: json
+    format: json
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}}"
+    fields:
+      - { label: Slug, name: slug, widget: string, hint: "Lowercase URL text. Example: issue-two-launch" }
+      - { label: Title, name: title, widget: string }
+      - { label: Excerpt, name: excerpt, widget: text }
+      - { label: Date, name: publishedAt, widget: datetime }
+      - label: Author
+        name: author
+        widget: relation
+        collection: authors
+        search_fields: ["name", "role"]
+        value_field: slug
+        display_fields: ["name"]
+      - label: Body
+        name: body
+        widget: list
+        field: { label: Paragraph, name: paragraph, widget: text }

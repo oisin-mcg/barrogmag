@@ -1,0 +1,10 @@
+{
+  "id": "issue-01",
+  "slug": "issue-01",
+  "title": "Issue 01",
+  "description": "Provides insight into venues and spaces for creatives in Dublin.",
+  "releaseDate": "2026-05-07T18:00:00.000Z",
+  "coverImage": "/issues/issue-01-cover.jpg",
+  "pdfPath": "/issues/issue-01.pdf",
+  "isCurrent": true
+}
