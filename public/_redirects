@@ -1,4 +1,0 @@
-# Keep the Sveltia CMS admin shell out of the React SPA fallback.
-/admin /admin/ 301
-/admin/ /admin/index.html 200
-/admin/* /admin/:splat 200
