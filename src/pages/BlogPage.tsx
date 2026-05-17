@@ -17,26 +17,36 @@ export default function BlogPage() {
         </div>
 
         {featuredPost ? (
-          <article className="featured-post">
-            <div className="post-kicker">
-              <span>Latest post</span>
-              <time dateTime={featuredPost.publishedAt}>
-                {formatPostDate(featuredPost.publishedAt)}
-              </time>
-            </div>
-            <h2>{featuredPost.title}</h2>
-            <p>{featuredPost.excerpt}</p>
-            <div className="post-footer">
-              <div className="author-line">
-                <img src={featuredPost.author.photo} alt="" />
-                <div>
-                  <strong>{featuredPost.author.name}</strong>
-                  <span>{featuredPost.author.role}</span>
-                </div>
-              </div>
-              <Link className="button-link primary" to={`/blog/${featuredPost.slug}`}>
-                Read post
+          <article className={`featured-post${featuredPost.coverImage ? "" : " no-media"}`}>
+            {featuredPost.coverImage ? (
+              <Link className="featured-post-media" to={`/blog/${featuredPost.slug}`}>
+                <img
+                  src={featuredPost.coverImage}
+                  alt={featuredPost.coverImageAlt ?? ""}
+                />
               </Link>
+            ) : null}
+            <div className="featured-post-content">
+              <div className="post-kicker">
+                <span>Latest post</span>
+                <time dateTime={featuredPost.publishedAt}>
+                  {formatPostDate(featuredPost.publishedAt)}
+                </time>
+              </div>
+              <h2>{featuredPost.title}</h2>
+              <p>{featuredPost.excerpt}</p>
+              <div className="post-footer">
+                <div className="author-line">
+                  <img src={featuredPost.author.photo} alt="" />
+                  <div>
+                    <strong>{featuredPost.author.name}</strong>
+                    <span>{featuredPost.author.role}</span>
+                  </div>
+                </div>
+                <Link className="button-link primary" to={`/blog/${featuredPost.slug}`}>
+                  Read post
+                </Link>
+              </div>
             </div>
           </article>
         ) : null}
@@ -44,6 +54,11 @@ export default function BlogPage() {
         <div className="post-list" aria-label="Blog posts">
           {remainingPosts.map((post) => (
             <article className="post-card" key={post.slug}>
+              {post.coverImage ? (
+                <Link className="post-card-media" to={`/blog/${post.slug}`}>
+                  <img src={post.coverImage} alt={post.coverImageAlt ?? ""} />
+                </Link>
+              ) : null}
               <div className="post-kicker">
                 <span>{post.author.name}</span>
                 <time dateTime={post.publishedAt}>

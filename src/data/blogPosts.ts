@@ -5,8 +5,17 @@ export type BlogPost = {
   title: string;
   excerpt: string;
   body: string[];
+  coverImage?: string;
+  coverImageAlt?: string;
+  photos?: BlogPhoto[];
   publishedAt: string;
   author: Author;
+};
+
+export type BlogPhoto = {
+  image: string;
+  alt?: string;
+  caption?: string;
 };
 
 type BlogPostContent = Omit<BlogPost, "author"> & {

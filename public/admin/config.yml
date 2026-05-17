@@ -107,6 +107,8 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Excerpt, name: excerpt, widget: text }
       - { label: Date, name: publishedAt, widget: datetime }
+      - { label: Cover photo, name: coverImage, widget: image, required: false }
+      - { label: Cover photo alt text, name: coverImageAlt, widget: string, required: false }
       - label: Author
         name: author
         widget: relation
@@ -118,3 +120,12 @@ collections:
         name: body
         widget: list
         field: { label: Paragraph, name: paragraph, widget: text }
+      - label: Photos
+        name: photos
+        widget: list
+        required: false
+        summary: "{{fields.caption}}"
+        fields:
+          - { label: Photo, name: image, widget: image }
+          - { label: Alt text, name: alt, widget: string, required: false }
+          - { label: Caption, name: caption, widget: string, required: false }
