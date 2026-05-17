@@ -2,7 +2,7 @@ backend:
   name: github
   repo: oisin-mcg/barrogmag
   branch: main
-  base_url: https://barrogmag.mcgillicuddyoisin.workers.dev
+  base_url: https://barrog-cms-auth.mcgillicuddyoisin.workers.dev
   
 
 media_folder: public/uploads

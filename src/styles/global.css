@@ -351,6 +351,17 @@ img {
   gap: var(--space-3);
 }
 
+.about-layout {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 860px;
+}
+
+.about-page .card {
+  display: grid;
+  gap: var(--space-2);
+}
+
 .contributor-card {
   display: grid;
   grid-template-columns: 82px minmax(0, 1fr);
@@ -420,7 +431,7 @@ img {
 }
 
 .featured-post.no-media {
-  width: min(100%, 860px);
+  width: min(100%, 760px);
   margin-inline: auto;
 }
 
@@ -457,13 +468,15 @@ img {
 }
 
 .featured-post h2 {
-  font-size: clamp(2rem, 4vw, 4rem);
+  font-size: clamp(1.9rem, 3vw, 3.15rem);
   line-height: 1.05;
 }
 
 .post-list {
   display: grid;
   gap: var(--space-3);
+  width: min(100%, 860px);
+  margin-inline: auto;
 }
 
 .post-card {
@@ -552,8 +565,8 @@ img {
 }
 
 .post-hero h1 {
-  font-size: clamp(2.25rem, 5vw, 4.75rem);
-  line-height: 0.98;
+  font-size: clamp(2.25rem, 4vw, 4rem);
+  line-height: 1.02;
 }
 
 .post-body {
@@ -615,8 +628,12 @@ img {
     grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1fr);
   }
 
+  .featured-post.no-media {
+    grid-template-columns: 1fr;
+  }
+
   .post-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
   }
 }
 

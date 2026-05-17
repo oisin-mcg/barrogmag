@@ -2,8 +2,8 @@ import { aboutPageContent } from "../data/pageContent";
 
 export default function AboutPage() {
   return (
-    <section className="section">
-      <div className="container grid two">
+    <section className="section about-page">
+      <div className="container about-layout">
         <article className="card">
           <h1>{aboutPageContent.title}</h1>
           {aboutPageContent.intro.map((paragraph) => (
