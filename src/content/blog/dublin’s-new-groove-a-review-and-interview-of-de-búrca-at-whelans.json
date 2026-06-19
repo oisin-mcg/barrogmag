@@ -3,6 +3,8 @@
   "title": "Dublin’s New Groove: A review and interview of De Búrca at Whelans",
   "excerpt": "“We need more experimentation. AI can't make weirdo fusion music.”",
   "publishedAt": "2026-05-11T19:30:00",
+  "coverImage": "/uploads/De Burca Interview.jpeg",
+  "coverImageAlt": "De Búrca post interview, Whelans Upstairs",
   "author": "myc",
   "body": [
     "De Búrca showcased their ability to dance a crowd through genres at their show in Whelans last Wednesday as an opening act for Henosis and Dog Swim. Rooted in funk, De Búrca performed syncopated bass rhythms from their bassist Gianni Filippeschi, dynamically played beside their in-the-pocket drummer Nathan Walsh. Gospel-like pianist Aleda Brady sang harmonies with their neo-soul guitarist and singer Leanna de Búrca. Self-described pop-funk band De Búrca opened the night and played like no one was watching, but it’s clear that they’re the ones to watch in the Dublin music scene.",
@@ -15,5 +17,22 @@
     "When asked about their writing process they described their two very distinct methods. As Aleda and Leanna are both studying songwriting, Leanna stated in our interview that “we kind of have this way of delivering a basis of an idea to the band. But another method we have is these guys [Gianni and Nathan] getting something really cool rhythmically and then we build on that, I think that's where our better songs come from”. Following this Nathan countered that “I think it's just a different point of view” and that “you'll get a lot of weirder things” from Gianni and Nathan jamming. Making the point that because of this, they trust that “Leanne and Aleda are just gonna make it work, 'cause they have their point of views as songwriters, and actually writing songs. So they put a bit of a method to our madness.”",
     "So what’s next for De Búrca? They plan to focus less on gigging or recording, and more on making their sound more solid and authentic. This plan is solidified by Leanna: “I think authenticity often gets lost in a lot of bands and songwriting, but I think once we define what we want to deliver to people as artists, then that would be really good for us”. Needless to say, whatever they're going to give us next will be full of groove and funk. As Nathan stated, “funk is better.”",
     "Date of Show & interview: Wednesday May 6th 2026"
+  ],
+  "photos": [
+    {
+      "image": "/uploads/Deburca Whelans.jpeg",
+      "alt": "",
+      "caption": "De Búrca with Oisín Reilly on guitar covering “Nakamarra” by Hiatus Kaiyote in Whelans"
+    },
+    {
+      "image": "/uploads/Deburac Whelans 2.jpeg",
+      "alt": "",
+      "caption": "De Búrca performing at Whelans, Wednesday May 6th 2026"
+    },
+    {
+      "image": "/uploads/Leanna De Burca.jpeg",
+      "alt": "",
+      "caption": "Leanna de Búrca performing at Whelans"
+    }
   ]
 }
